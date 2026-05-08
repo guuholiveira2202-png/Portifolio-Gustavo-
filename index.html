@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Gustavo | Desenvolvedor de Sistemas</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <nav class="floating-nav">
+        <a href="#" class="logo">Dev<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="#sobre">Sobre</a></li>
+            
+            <li><a href="#projetos">Projetos</a></li>
+        </ul>
+        <a href="#contato" class="btn btn-sm">Contato</a>
+    </nav>
+
+    <section id="hero">
+        <div class="container hero-content reveal">
+            <div class="badge-tech"><i class="fas fa-terminal"></i> <span id="typewriter"></span><span class="cursor">|</span></div>
+            <h1>Analista e desenvolvedor de software para o <br><span class="text-gradient">Futuro Digital</span></h1>
+            <p>Construindo arquiteturas resilientes e interfaces de alta performance. Do banco de dados ao navegador, foco na entrega de valor.</p>
+            <div class="hero-actions">
+                <a href="#projetos" class="btn btn-primary">Explorar Trabalhos</a>
+                <a href="https://github.com" target="_blank" class="btn btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="section-padding">
+        <div class="container">
+            <h2 class="section-title reveal">Sobre & Expertise</h2>
+            
+            <div class="bento-grid" id="bento-cards">
+                <div class="bento-card bento-large reveal">
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <h3><i class="fas fa-user-astronaut"></i> Quem sou eu</h3>
+                        <p>Analista e Desenvolvedor focado em resolver problemas complexos através de código limpo. Com vivência no ecossistema ágil, atuo desde a modelagem de microsserviços até a experiência do usuário final.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card reveal" style="transition-delay: 100ms;">
+                    <div class="card-border"></div>
+                    <div class="card-content stats-content">
+                        <span class="stat-number">+2</span>
+                        <span class="stat-label">Anos de XP</span>
+                    </div>
+                </div>
+
+                <div class="bento-card reveal" style="transition-delay: 200ms;">
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <i class="fas fa-server tech-icon"></i>
+                        <h4>Back-end</h4>
+                        <div class="tags">
+                            <span>Node.js</span>
+                            <span>Python</span>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card reveal" style="transition-delay: 300ms;">
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <i class="fas fa-code tech-icon"></i>
+                        <h4>Front-end</h4>
+                        <div class="tags">
+                            <span>React</span>
+                            <span>JavaScript</span>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card reveal" style="transition-delay: 400ms;">
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <i class="fas fa-database tech-icon"></i>
+                        <h4>Data & Cloud</h4>
+                        <div class="tags">
+                            <span>PostgreSQL</span>
+                            <span>Docker</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos" class="section-padding">
+        <div class="container">
+            <h2 class="section-title reveal">Projetos em Destaque</h2>
+            
+            <div class="projects-grid" id="project-cards">
+                <div class="project-card reveal">
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="project-header">
+                            <i class="far fa-folder-open folder-icon"></i>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3>Plataforma de Logística API</h3>
+                        <p>Microsserviço de roteirização desenvolvido para calcular rotas otimizadas de entrega em tempo real.</p>
+                        <div class="tags tech-font">
+                            <span>Spring_Boot</span>
+                            <span>PostGIS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" style="transition-delay: 150ms;">
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="project-header">
+                            <i class="far fa-folder-open folder-icon"></i>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3>SaaS Financeiro Dashboard</h3>
+                        <p>Interface rica para acompanhamento de métricas financeiras, com gráficos dinâmicos e exportação de dados.</p>
+                        <div class="tags tech-font">
+                            <span>React</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" style="transition-delay: 300ms;">
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="project-header">
+                            <i class="far fa-folder-open folder-icon"></i>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3>Web Scraper & BI</h3>
+                        <p>Pipeline de extração e tratamento de dados para alimentar relatórios executivos automatizados.</p>
+                        <div class="tags tech-font">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container reveal">
+            <div class="cta-box">
+                <h2>Vamos construir algo incrível?</h2>
+                <p>Estou sempre aberto a conversar sobre novos projetos, ideias arquiteturais ou oportunidades desafiadoras.</p>
+                <a href="mailto:seuemail@exemplo.com" class="btn btn-primary">Diga Olá <i class="fas fa-paper-plane"></i></a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Seu Nome. Design system e código.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+
+
+    <style>
+/* Variáveis do Tema Moderno */
+:root {
+    --bg-base: #050505;
+    --bg-surface: #0e0e0e;
+    --card-bg: rgba(255, 255, 255, 0.02);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --text-primary: #ededed;
+    --text-secondary: #a1a1aa;
+    --accent-blue: #3b82f6;
+    --accent-purple: #8b5cf6;
+    --glow-color: rgba(139, 92, 246, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fundo com Orbes Brilhantes */
+.bg-orbs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.4;
+}
+
+.orb-1 {
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: var(--accent-purple);
+}
+
+.orb-2 {
+    bottom: -20%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: var(--accent-blue);
+    opacity: 0.2;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 120px 0;
+}
+
+h1, h2, h3, h4 {
+    letter-spacing: -0.03em;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, var(--accent-purple), var(--accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+/* Navegação Pílula (Floating Nav) */
+.floating-nav {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(14, 14, 14, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-subtle);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px 8px 24px;
+    width: 90%;
+    max-width: 800px;
+    z-index: 1000;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.floating-nav .logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.floating-nav .logo span { color: var(--accent-purple); }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: #fff; }
+
+/* Botões */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border: none;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background: #e5e5e5;
+    transform: scale(1.02);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #fff;
+    border: 1px solid var(--border-subtle);
+}
+
+.btn-ghost:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    border-radius: 50px;
+}
+
+/* Hero Section */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.hero-content {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.badge-tech {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent-purple);
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+#hero h1 {
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+}
+
+/* MAGIC GLOW CARDS (O Efeito Spotlight) */
+.bento-grid, .projects-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.bento-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, minmax(180px, auto));
+}
+
+.bento-card, .project-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    position: relative;
+    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+}
+
+/* Efeito de luz acompanhando o mouse */
+.bento-card::before, .project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y), 
+        rgba(255, 255, 255, 0.06),
+        transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bento-card:hover::before, .project-card:hover::before {
+    opacity: 1;
+}
+
+.card-content {
+    padding: 32px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+/* Bento Box Configs */
+.bento-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.bento-card h3 { font-size: 1.4rem; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+.bento-card h4 { font-size: 1.1rem; margin-bottom: 12px; }
+.bento-card p { color: var(--text-secondary); font-size: 0.95rem; }
+
+.tech-icon { font-size: 2rem; color: var(--accent-blue); margin-bottom: 20px; }
+
+.stats-content { align-items: center; justify-content: center; text-align: center; }
+.stat-number { font-size: 4rem; font-weight: 700; background: linear-gradient(to right, #fff, var(--text-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
+.stat-label { color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px;}
+
+/* Tags e Fontes Tech */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.tags span {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-subtle);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.tech-font span { font-family: 'Space Mono', monospace; }
+
+/* Projetos */
+.projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.folder-icon { font-size: 2rem; color: var(--accent-purple); }
+.project-header a { color: var(--text-secondary); font-size: 1.2rem; transition: color 0.3s; }
+.project-header a:hover { color: #fff; }
+
+.project-card h3 { margin-bottom: 12px; font-size: 1.3rem; }
+.project-card p { color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem; flex-grow: 1; }
+
+/* CTA Box / Footer */
+.cta-box {
+    background: linear-gradient(145deg, rgba(20,20,20,1) 0%, rgba(10,10,10,1) 100%);
+    border: 1px solid var(--border-subtle);
+    border-radius: 24px;
+    padding: 60px 40px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.cta-box h2 { font-size: 2.5rem; margin-bottom: 16px; }
+.cta-box p { color: var(--text-secondary); max-width: 500px; margin: 0 auto 32px; }
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 0;
+    border-top: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.social-links { display: flex; gap: 16px; }
+.social-links a { color: var(--text-secondary); font-size: 1.2rem; transition: color 0.3s; }
+.social-links a:hover { color: #fff; }
+
+/* Scroll Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .bento-large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .floating-nav { top: auto; bottom: 24px; border-radius: 16px; padding: 12px 16px; }
+    .nav-links { display: none; } /* Oculta menu textos no mobile, deixa só Logo e CTA */
+    
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-large { grid-column: span 1; }
+    
+    .hero-actions { flex-direction: column; width: 100%; }
+    .btn { width: 100%; justify-content: center; }
+    
+    .cta-box { padding: 40px 20px; }
+    .cta-box h2 { font-size: 1.8rem; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+}
+    </style>
+
+    <script>
+  // 1. Efeito de Digitação (Typewriter)
+const texts = ["Analista de Sistemas", "Desenvolvedor Backend", "Engenheiro de Software"];
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+let isDeleting = false;
+
+function type() {
+    if (count === texts.length) {
+        count = 0;
+    }
+    currentText = texts[count];
+
+    if (isDeleting) {
+        letter = currentText.slice(0, --index);
+    } else {
+        letter = currentText.slice(0, ++index);
+    }
+
+    document.getElementById("typewriter").textContent = letter;
+
+    let typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && letter.length === currentText.length) {
+        typeSpeed = 2000; // Pausa no final da palavra
+        isDeleting = true;
+    } else if (isDeleting && letter.length === 0) {
+        isDeleting = false;
+        count++;
+        typeSpeed = 500; // Pausa antes de começar a nova palavra
+    }
+
+    setTimeout(type, typeSpeed);
+}
+
+// Inicia o efeito de digitação após carregamento
+document.addEventListener("DOMContentLoaded", type);
+
+// 2. Animação de Scroll (Reveal Elements)
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 100; // Altura que o elemento deve aparecer
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        }
+    }
+}
+window.addEventListener("scroll", reveal);
+reveal(); // Dispara uma vez para verificar o que já está na tela
+
+// 3. Efeito MAGIC GLOW (Cards que acompanham o mouse)
+// Este é o script responsável por atualizar a posição do brilho
+const handleOnMouseMove = (e, containerId) => {
+    const cards = document.getElementById(containerId).getElementsByClassName(containerId === 'bento-cards' ? 'bento-card' : 'project-card');
+    
+    for (const card of cards) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+    }
+};
+
+const bentoGrid = document.getElementById("bento-cards");
+const projectGrid = document.getElementById("project-cards");
+
+if (bentoGrid) {
+    bentoGrid.onmousemove = e => handleOnMouseMove(e, "bento-cards");
+}
+if (projectGrid) {
+    projectGrid.onmousemove = e => handleOnMouseMove(e, "project-cards");
+}
+    </script>
+</body>
+</html>
