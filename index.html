@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Gustavo | Desenvolvedor de Sistemas</title>
+    <title>Gustavo Henrique | Engenheiro de Software</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,17 +12,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
     <style>
-        /* Variáveis do Tema Moderno */
+        /* Variáveis do Tema Profissional */
         :root {
-            --bg-base: #050505;
-            --bg-surface: #0e0e0e;
+            --bg-base: #030303;
+            --bg-surface: #0a0a0a;
             --card-bg: rgba(255, 255, 255, 0.02);
-            --border-subtle: rgba(255, 255, 255, 0.08);
-            --text-primary: #ededed;
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --text-primary: #f4f4f5;
             --text-secondary: #a1a1aa;
-            --accent-blue: #3b82f6;
-            --accent-purple: #8b5cf6;
-            --glow-color: rgba(139, 92, 246, 0.15);
+            --accent-blue: #2563eb;
+            --accent-purple: #7c3aed;
+            --glow-color: rgba(124, 58, 237, 0.1);
         }
 
         * {
@@ -40,7 +40,7 @@
             position: relative;
         }
 
-        /* Fundo com Orbes Brilhantes */
+        /* Fundo com Orbes Sutis */
         .bg-orbs {
             position: fixed;
             top: 0;
@@ -54,25 +54,25 @@
         .orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.4;
+            filter: blur(140px);
+            opacity: 0.3;
         }
 
         .orb-1 {
             top: -10%;
             left: -10%;
-            width: 50vw;
-            height: 50vw;
+            width: 40vw;
+            height: 40vw;
             background: var(--accent-purple);
         }
 
         .orb-2 {
             bottom: -20%;
             right: -10%;
-            width: 60vw;
-            height: 60vw;
+            width: 50vw;
+            height: 50vw;
             background: var(--accent-blue);
-            opacity: 0.2;
+            opacity: 0.15;
         }
 
         .container {
@@ -86,11 +86,11 @@
         }
 
         h1, h2, h3, h4 {
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
         }
 
         .text-gradient {
-            background: linear-gradient(to right, var(--accent-purple), var(--accent-blue));
+            background: linear-gradient(to right, #a78bfa, #60a5fa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -107,9 +107,9 @@
             top: 24px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(14, 14, 14, 0.6);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-subtle);
             border-radius: 100px;
             display: flex;
@@ -119,7 +119,7 @@
             width: 90%;
             max-width: 800px;
             z-index: 1000;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
         }
 
         .floating-nav .logo {
@@ -127,9 +127,10 @@
             text-decoration: none;
             font-weight: 700;
             font-size: 1.2rem;
+            letter-spacing: -0.05em;
         }
 
-        .floating-nav .logo span { color: var(--accent-purple); }
+        .floating-nav .logo span { color: var(--accent-blue); }
 
         .nav-links {
             display: flex;
@@ -142,7 +143,7 @@
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover { color: #fff; }
@@ -156,7 +157,7 @@
             border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             cursor: pointer;
             font-size: 0.95rem;
             border: none;
@@ -168,8 +169,9 @@
         }
 
         .btn-primary:hover {
-            background: #e5e5e5;
-            transform: scale(1.02);
+            background: #e4e4e7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
         }
 
         .btn-ghost {
@@ -179,8 +181,8 @@
         }
 
         .btn-ghost:hover {
-            background: rgba(255,255,255,0.05);
-            border-color: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.15);
         }
 
         .btn-sm {
@@ -196,11 +198,11 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding-top: 100px;
+            padding-top: 80px;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -209,15 +211,17 @@
         .badge-tech {
             font-family: 'Space Mono', monospace;
             font-size: 0.85rem;
-            color: var(--accent-purple);
-            background: rgba(139, 92, 246, 0.1);
-            border: 1px solid rgba(139, 92, 246, 0.2);
+            color: #a78bfa;
+            background: rgba(124, 58, 237, 0.08);
+            border: 1px solid rgba(124, 58, 237, 0.2);
             padding: 6px 16px;
             border-radius: 50px;
             margin-bottom: 24px;
             display: flex;
             align-items: center;
             gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .cursor {
@@ -227,16 +231,16 @@
         @keyframes blink { 50% { opacity: 0; } }
 
         #hero h1 {
-            font-size: clamp(3rem, 5vw, 5rem);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             line-height: 1.1;
             margin-bottom: 24px;
         }
 
         #hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-secondary);
             margin-bottom: 40px;
-            max-width: 600px;
+            max-width: 700px;
         }
 
         .hero-actions {
@@ -244,7 +248,7 @@
             gap: 16px;
         }
 
-        /* MAGIC GLOW CARDS (O Efeito Spotlight) */
+        /* MAGIC GLOW CARDS */
         .bento-grid, .projects-grid {
             display: grid;
             gap: 20px;
@@ -252,7 +256,7 @@
 
         .bento-grid {
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, minmax(180px, auto));
+            grid-template-rows: repeat(2, minmax(200px, auto));
         }
 
         .bento-card, .project-card {
@@ -261,9 +265,9 @@
             position: relative;
             border: 1px solid var(--border-subtle);
             overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
-        /* Efeito de luz acompanhando o mouse */
         .bento-card::before, .project-card::before {
             content: "";
             position: absolute;
@@ -273,7 +277,7 @@
             height: 100%;
             background: radial-gradient(
                 600px circle at var(--mouse-x) var(--mouse-y), 
-                rgba(255, 255, 255, 0.06),
+                rgba(255, 255, 255, 0.05),
                 transparent 40%
             );
             opacity: 0;
@@ -286,17 +290,15 @@
             opacity: 1;
         }
 
-        /* Tornar os cards de projeto clicáveis e interativos */
         .project-card {
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(139, 92, 246, 0.4);
+            transform: translateY(-4px);
+            border-color: rgba(96, 165, 250, 0.3);
         }
 
-        /* Truque para fazer o card inteiro ser clicável */
         .card-link::before {
             content: '';
             position: absolute;
@@ -322,17 +324,17 @@
             grid-row: span 2;
         }
 
-        .bento-card h3 { font-size: 1.4rem; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
-        .bento-card h4 { font-size: 1.1rem; margin-bottom: 12px; }
-        .bento-card p { color: var(--text-secondary); font-size: 0.95rem; }
+        .bento-card h3 { font-size: 1.4rem; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; color: #fff; }
+        .bento-card h4 { font-size: 1.2rem; margin-bottom: 8px; color: #e4e4e7; }
+        .bento-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 16px; }
 
-        .tech-icon { font-size: 2rem; color: var(--accent-blue); margin-bottom: 20px; }
+        .tech-icon { font-size: 2rem; color: #60a5fa; margin-bottom: 16px; }
 
         .stats-content { align-items: center; justify-content: center; text-align: center; }
-        .stat-number { font-size: 4rem; font-weight: 700; background: linear-gradient(to right, #fff, var(--text-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
-        .stat-label { color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px;}
+        .stat-number { font-size: 4rem; font-weight: 700; background: linear-gradient(to right, #fff, #71717a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
+        .stat-label { color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; font-weight: 600;}
 
-        /* Tags e Fontes Tech */
+        /* Tags */
         .tags {
             display: flex;
             flex-wrap: wrap;
@@ -341,19 +343,20 @@
         }
 
         .tags span {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border-subtle);
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 4px;
             font-size: 0.75rem;
             color: var(--text-secondary);
+            font-weight: 500;
         }
 
         .tech-font span { font-family: 'Space Mono', monospace; }
 
         /* Projetos */
         .projects-grid {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         }
 
         .project-header {
@@ -362,28 +365,29 @@
             align-items: center;
             margin-bottom: 20px;
             position: relative;
-            z-index: 11; /* Fica acima do overlay do link */
+            z-index: 11;
         }
 
-        .folder-icon { font-size: 2rem; color: var(--accent-purple); }
-        .project-header a { color: var(--text-secondary); font-size: 1.2rem; transition: color 0.3s; }
+        .folder-icon { font-size: 2rem; color: #a78bfa; }
+        .project-header a { color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s; }
         .project-card:hover .project-header a { color: #fff; }
 
-        .project-card h3 { margin-bottom: 12px; font-size: 1.3rem; }
+        .project-card h3 { margin-bottom: 12px; font-size: 1.3rem; color: #f4f4f5; }
         .project-card p { color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem; flex-grow: 1; }
 
         /* CTA Box / Footer */
         .cta-box {
-            background: linear-gradient(145deg, rgba(20,20,20,1) 0%, rgba(10,10,10,1) 100%);
+            background: linear-gradient(145deg, rgba(15,15,15,1) 0%, rgba(5,5,5,1) 100%);
             border: 1px solid var(--border-subtle);
             border-radius: 24px;
             padding: 60px 40px;
             text-align: center;
             margin-bottom: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        .cta-box h2 { font-size: 2.5rem; margin-bottom: 16px; }
-        .cta-box p { color: var(--text-secondary); max-width: 500px; margin: 0 auto 32px; }
+        .cta-box h2 { font-size: 2.2rem; margin-bottom: 16px; }
+        .cta-box p { color: var(--text-secondary); max-width: 600px; margin: 0 auto 32px; font-size: 1.05rem; }
 
         .footer-bottom {
             display: flex;
@@ -392,18 +396,39 @@
             padding: 32px 0;
             border-top: 1px solid var(--border-subtle);
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
-        .social-links { display: flex; gap: 16px; }
-        .social-links a { color: var(--text-secondary); font-size: 1.2rem; transition: color 0.3s; position: relative; z-index: 10; }
+        .social-links { 
+            display: flex; 
+            gap: 24px; 
+            align-items: center;
+        }
+        
+        .social-links a { 
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary); 
+            font-size: 0.95rem; 
+            font-weight: 500;
+            transition: color 0.2s; 
+            text-decoration: none;
+            position: relative; 
+            z-index: 10; 
+        }
+        
+        .social-links a i {
+            font-size: 1.3rem;
+        }
+
         .social-links a:hover { color: #fff; }
 
         /* Scroll Animations */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .reveal.active {
             opacity: 1;
@@ -412,13 +437,8 @@
 
         /* Responsividade */
         @media (max-width: 900px) {
-            .bento-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .bento-large {
-                grid-column: span 2;
-                grid-row: span 1;
-            }
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+            .bento-large { grid-column: span 2; grid-row: span 1; }
         }
 
         @media (max-width: 600px) {
@@ -433,7 +453,8 @@
             
             .cta-box { padding: 40px 20px; }
             .cta-box h2 { font-size: 1.8rem; }
-            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+            .footer-bottom { flex-direction: column; gap: 24px; text-align: center; }
+            .social-links { flex-direction: column; gap: 16px; }
         }
     </style>
 </head>
@@ -447,8 +468,8 @@
     <nav class="floating-nav">
         <a href="#" class="logo">Dev<span>.</span></a>
         <ul class="nav-links">
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#sobre">Perfil</a></li>
+            <li><a href="#projetos">Cases</a></li>
         </ul>
         <a href="#contato" class="btn btn-sm">Contato</a>
     </nav>
@@ -456,25 +477,26 @@
     <section id="hero">
         <div class="container hero-content reveal">
             <div class="badge-tech"><i class="fas fa-terminal"></i> <span id="typewriter"></span><span class="cursor">|</span></div>
-            <h1>Analista e desenvolvedor de software para o <br><span class="text-gradient">Futuro Digital</span></h1>
-            <p>Construindo arquiteturas resilientes e interfaces de alta performance. Do banco de dados ao navegador, foco na entrega de valor.</p>
+            <h1>Desenvolvendo <span class="text-gradient">Arquiteturas Escaláveis</span> para negócios digitais</h1>
+            <p>Especialista em criar soluções de ponta a ponta, alinhando objetivos estratégicos com engenharia de software de alta performance, código limpo e foco absoluto na entrega de valor.</p>
             <div class="hero-actions">
-                <a href="#projetos" class="btn btn-primary">Explorar Trabalhos</a>
-                <a href="https://github.com/guuholiveira2202-png" target="_blank" class="btn btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+                <a href="#" target="_blank" class="btn btn-ghost"><i class="fas fa-file-pdf"></i> Baixar CV</a>
             </div>
         </div>
     </section>
 
     <section id="sobre" class="section-padding">
         <div class="container">
-            <h2 class="section-title reveal">Sobre & Expertise</h2>
+            <h2 class="section-title reveal">Perfil Profissional</h2>
             
             <div class="bento-grid" id="bento-cards">
                 <div class="bento-card bento-large reveal">
                     <div class="card-border"></div>
                     <div class="card-content">
-                        <h3><i class="fas fa-user-astronaut"></i> Quem sou eu</h3>
-                        <p>Analista e Desenvolvedor focado em resolver problemas complexos através de código limpo. Com vivência no ecossistema ágil, atuo desde a modelagem de microsserviços até a experiência do usuário final.</p>
+                        <h3><i class="fas fa-briefcase"></i> Síntese de Qualificações</h3>
+                        <p>Sou o Gustavo, profissional dedicado à engenharia de software com foco em transformar requisitos complexos de negócios em sistemas robustos e eficientes. Possuo vivência consolidada em metodologias ágeis e cultura de qualidade técnica.</p>
+                        <p>Minha atuação engloba desde a modelagem de bancos de dados relacionais e construção de APIs seguras no back-end, até a concepção de interfaces dinâmicas, garantindo resiliência, manutenibilidade e excelente experiência do usuário.</p>
                     </div>
                 </div>
 
@@ -482,7 +504,7 @@
                     <div class="card-border"></div>
                     <div class="card-content stats-content">
                         <span class="stat-number">+2</span>
-                        <span class="stat-label">Anos de XP</span>
+                        <span class="stat-label">Anos de Experiência</span>
                     </div>
                 </div>
 
@@ -490,10 +512,12 @@
                     <div class="card-border"></div>
                     <div class="card-content">
                         <i class="fas fa-server tech-icon"></i>
-                        <h4>Back-end</h4>
+                        <h4>Engenharia Back-end</h4>
+                        <p>Desenvolvimento de APIs RESTful, microsserviços e integração de sistemas com foco em segurança.</p>
                         <div class="tags">
                             <span>Node.js</span>
                             <span>Python</span>
+                            <span>Clean Architecture</span>
                         </div>
                     </div>
                 </div>
@@ -501,11 +525,13 @@
                 <div class="bento-card reveal" style="transition-delay: 300ms;">
                     <div class="card-border"></div>
                     <div class="card-content">
-                        <i class="fas fa-code tech-icon"></i>
-                        <h4>Front-end</h4>
+                        <i class="fas fa-layer-group tech-icon"></i>
+                        <h4>Arquitetura Front-end</h4>
+                        <p>Criação de SPAs otimizadas para performance, conversão e acessibilidade (Padrões WCAG).</p>
                         <div class="tags">
                             <span>React</span>
                             <span>JavaScript</span>
+                            <span>Tailwind/CSS3</span>
                         </div>
                     </div>
                 </div>
@@ -514,10 +540,12 @@
                     <div class="card-border"></div>
                     <div class="card-content">
                         <i class="fas fa-database tech-icon"></i>
-                        <h4>Data & Cloud</h4>
+                        <h4>Data & Infraestrutura</h4>
+                        <p>Modelagem de dados relacional e ambientes de implantação baseados em containers.</p>
                         <div class="tags">
                             <span>PostgreSQL</span>
                             <span>Docker</span>
+                            <span>CI/CD</span>
                         </div>
                     </div>
                 </div>
@@ -527,7 +555,7 @@
 
     <section id="projetos" class="section-padding">
         <div class="container">
-            <h2 class="section-title reveal">Projetos em Destaque</h2>
+            <h2 class="section-title reveal">Cases de Sucesso</h2>
             
             <div class="projects-grid" id="project-cards">
                 
@@ -538,11 +566,11 @@
                             <i class="far fa-folder-open folder-icon"></i>
                             <a href="https://guuholiveira2202-png.github.io/Finan-as-flow/" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i></a>
                         </div>
-                        <h3>Finanças Flow</h3>
-                        <p>Plataforma web para gestão financeira, permitindo o controle intuitivo de receitas, despesas e fluxo de caixa através de uma interface moderna e responsiva.</p>
+                        <h3>SaaS: Finanças Flow</h3>
+                        <p>Sistema corporativo de gestão financeira. Desenvolvido para centralizar o controle de fluxo de caixa, relatórios de receitas e despesas, utilizando uma arquitetura escalável e interface focada em produtividade.</p>
                         <div class="tags tech-font">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
+                            <span>Arquitetura Web</span>
+                            <span>Dashboard</span>
                             <span>JavaScript</span>
                         </div>
                     </div>
@@ -555,12 +583,12 @@
                             <i class="far fa-folder-open folder-icon"></i>
                             <a href="https://guuholiveira2202-png.github.io/Hype-PIzzaria/" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i></a>
                         </div>
-                        <h3>Hype  Store </h3>
-                        <p>Plataforma web com interface atraente, oferecendo um cardápio digital otimizado para a melhor experiência do usuário e navegação fluida.</p>
+                        <h3>E-commerce: Hype Store</h3>
+                        <p>Plataforma de catálogo digital e vendas para o setor alimentício. Arquitetada visando altíssima retenção e conversão de usuários por meio de um design system responsivo e fluxo de checkout simplificado.</p>
                         <div class="tags tech-font">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
+                            <span>E-commerce</span>
+                            <span>UI/UX</span>
+                            <span>Frontend</span>
                         </div>
                     </div>
                 </div>
@@ -572,12 +600,12 @@
                             <i class="far fa-folder-open folder-icon"></i>
                             <a href="https://guuholiveira2202-png.github.io/psicoterapelta-leia-/" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i></a>
                         </div>
-                        <h3>Âncora Psi</h3>
-                        <p>Landing page moderna desenvolvida para apresentação de serviços de psicoterapia, focada em UX, acessibilidade e conversão de pacientes.</p>
+                        <h3>Institucional: Âncora Psi</h3>
+                        <p>Página de alta conversão (Landing Page) projetada para o setor de saúde mental. Estruturada com técnicas de SEO, otimização de tempo de carregamento e gatilhos de captação de leads qualificados.</p>
                         <div class="tags tech-font">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
+                            <span>SEO</span>
+                            <span>Landing Page</span>
+                            <span>Conversão</span>
                         </div>
                     </div>
                 </div>
@@ -589,19 +617,24 @@
     <footer id="contato">
         <div class="container reveal">
             <div class="cta-box">
-                <h2>Vamos construir algo incrível?</h2>
-                <p>Estou sempre aberto a conversar sobre novos projetos, ideias arquiteturais ou oportunidades desafiadoras.</p>
-                <a href="https://wa.me/5511930862733?text=Olá,%20Gustavo!%20Vi%20o%20seu%20portfólio%20e%20gostaria%20de%20conversar." target="_blank" class="btn btn-primary">
-                    Diga Olá <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i>
+                <h2>Disponível para novos desafios.</h2>
+                <p>Busca um engenheiro de software para compor sua equipe ou liderar o desenvolvimento técnico do seu próximo projeto estratégico? Vamos agendar uma conversa.</p>
+                <a href="https://wa.me/5511930862733?text=Olá,%20Gustavo!%20Acessei%20seu%20portfólio%20e%20gostaria%20de%20falar%20sobre%20oportunidades." target="_blank" class="btn btn-primary">
+                    <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Iniciar Contato Direto
                 </a>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 Gustavo Henrique. Design system e código.</p>
+                <p>&copy; 2026 Gustavo Henrique. Todos os direitos reservados.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/guuholiveira2202-png" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    
+                    
+                    <a href="https://instagram.com/lowkey_gusta" target="_blank" title="Meu Instagram">
+                        <i class="fab fa-instagram"></i> @lowkey_gusta
+                    </a>
+                    <a href="https://wa.me/5511930862733" target="_blank" title="Meu WhatsApp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
                 </div>
             </div>
         </div>
@@ -609,7 +642,7 @@
 
     <script>
         // 1. Efeito de Digitação (Typewriter)
-        const texts = ["Analista de Sistemas", "Desenvolvedor Backend", "Engenheiro de Software"];
+        const texts = ["Engenheiro de Software", "Desenvolvedor Backend", "Analista de Sistemas"];
         let count = 0;
         let index = 0;
         let currentText = "";
@@ -630,15 +663,15 @@
 
             document.getElementById("typewriter").textContent = letter;
 
-            let typeSpeed = isDeleting ? 50 : 100;
+            let typeSpeed = isDeleting ? 40 : 80;
 
             if (!isDeleting && letter.length === currentText.length) {
-                typeSpeed = 2000; // Pausa no final da palavra
+                typeSpeed = 2500; // Pausa no final da palavra
                 isDeleting = true;
             } else if (isDeleting && letter.length === 0) {
                 isDeleting = false;
                 count++;
-                typeSpeed = 500; // Pausa antes de começar a nova palavra
+                typeSpeed = 400; // Pausa antes de começar a nova palavra
             }
 
             setTimeout(type, typeSpeed);
@@ -647,21 +680,26 @@
         // Inicia o efeito de digitação após carregamento
         document.addEventListener("DOMContentLoaded", type);
 
-        // 2. Animação de Scroll (Reveal Elements)
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100; // Altura que o elemento deve aparecer
+        // 2. Animação de Scroll (Reveal Elements) com Intersection Observer (Mais performático)
+        const revealOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
 
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add("active");
+                    observer.unobserve(entry.target); // Anima apenas uma vez
                 }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal(); // Dispara uma vez para verificar o que já está na tela
+            });
+        }, revealOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealOnScroll.observe(el);
+        });
 
         // 3. Efeito MAGIC GLOW (Cards que acompanham o mouse)
         const handleOnMouseMove = (e, containerId) => {
