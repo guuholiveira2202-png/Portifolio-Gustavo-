@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,310 +7,351 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
     <style>
-        /* Variáveis do Tema Profissional */
+        /* =========================================
+           Variáveis do Tema
+           ========================================= */
         :root {
-            --bg-base: #030303;
-            --bg-surface: #0a0a0a;
-            --card-bg: rgba(255, 255, 255, 0.02);
-            --border-subtle: rgba(255, 255, 255, 0.06);
-            --text-primary: #f4f4f5;
+            --bg-base: #050505;
+            --bg-card: #0f0f13; 
+            --bg-card-hover: #141419;
+            
+            --card-border-default: rgba(255, 255, 255, 0.05);
+            --card-border-highlight: rgba(139, 92, 246, 0.3);
+            
+            --text-primary: #ffffff;
             --text-secondary: #a1a1aa;
-            --accent-blue: #2563eb;
-            --accent-purple: #7c3aed;
-            --glow-color: rgba(124, 58, 237, 0.1);
+            --text-tertiary: #71717a;
+            
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-cyan: #22d3ee;
+            --gradient-primary: linear-gradient(135deg, #a78bfa, #22d3ee);
+            
+            --glow-card: rgba(139, 92, 246, 0.12); 
+            --shadow-premium: 0 20px 40px -10px rgba(0, 0, 0, 0.8);
+            
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        /* =========================================
+           Reset & Base
+           ========================================= */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        ::selection {
+            background: rgba(139, 92, 246, 0.4);
+            color: #fff;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-base); }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 8px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-base);
             color: var(--text-primary);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Fundo com Orbes Sutis */
+        /* =========================================
+           Fundo Animado (Orbs)
+           ========================================= */
         .bg-orbs {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
+            top: 0; left: 0; width: 100vw; height: 100vh;
             z-index: -1;
             overflow: hidden;
+            background: radial-gradient(circle at 50% 0%, #101018 0%, var(--bg-base) 60%);
         }
 
         .orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(140px);
-            opacity: 0.3;
+            filter: blur(90px);
+            opacity: 0.2;
+            animation: orbMovement 20s infinite alternate var(--ease-out-expo);
         }
 
-        .orb-1 {
-            top: -10%;
-            left: -10%;
-            width: 40vw;
-            height: 40vw;
-            background: var(--accent-purple);
+        .orb-1 { top: -10%; left: -10%; width: 40vw; height: 40vw; background: var(--accent-purple); animation-duration: 25s; }
+        .orb-2 { bottom: -10%; right: -5%; width: 30vw; height: 30vw; background: var(--accent-cyan); animation-delay: -5s; opacity: 0.15; }
+
+        @keyframes orbMovement {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(5%, 5%) scale(1.1); }
         }
 
-        .orb-2 {
-            bottom: -20%;
-            right: -10%;
-            width: 50vw;
-            height: 50vw;
-            background: var(--accent-blue);
-            opacity: 0.15;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-padding {
-            padding: 120px 0;
-        }
-
-        h1, h2, h3, h4 {
-            letter-spacing: -0.02em;
-        }
-
+        /* =========================================
+           Layout & Tipografia
+           ========================================= */
+        .container { width: 90%; max-width: 1140px; margin: 0 auto; position: relative; z-index: 10; }
+        .section-padding { padding: 140px 0; }
+        
         .text-gradient {
-            background: linear-gradient(to right, #a78bfa, #60a5fa);
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-weight: 800;
         }
 
         .section-title {
-            font-size: 2.2rem;
-            margin-bottom: 3rem;
-            font-weight: 600;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 4rem;
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: -0.03em;
         }
 
-        /* Navegação Pílula (Floating Nav) */
+        /* =========================================
+           Navegação Premium (Design Melhorado)
+           ========================================= */
         .floating-nav {
             position: fixed;
-            top: 24px;
+            top: 32px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(10, 10, 10, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border-subtle);
-            border-radius: 100px;
+            background: rgba(15, 15, 20, 0.35); /* Mais transparente */
+            backdrop-filter: blur(32px); /* Blur mais intenso */
+            -webkit-backdrop-filter: blur(32px);
+            border: 1px solid rgba(255, 255, 255, 0.06); /* Borda mais subtil */
+            border-radius: 100px; 
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 8px 16px 8px 24px;
+            padding: 8px 10px 8px 32px; 
             width: 90%;
-            max-width: 800px;
+            max-width: 600px; /* Reduzido levemente pela remoção de um item */
             z-index: 1000;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
+            transition: all 0.5s var(--ease-out-expo);
         }
 
-        .floating-nav .logo {
-            color: #fff;
-            text-decoration: none;
+        .floating-nav.scrolled {
+            top: 20px;
+            background: rgba(10, 10, 12, 0.65);
+            border-color: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+        }
+
+        .floating-nav .logo { 
+            color: #fff; 
+            text-decoration: none; 
+            font-weight: 800; 
+            font-size: 1.25rem; 
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 10px rgba(255,255,255,0.1);
+        }
+
+        .floating-nav .logo span { color: var(--accent-cyan); /* Cor da pontuação alterada para dar contraste */ }
+
+        .nav-links { 
+            display: flex; 
+            list-style: none; 
+            gap: 8px; /* Espaço um pouco maior entre os itens restantes */
+        }
+
+        .nav-links a { 
+            color: var(--text-secondary); 
+            text-decoration: none; 
+            font-size: 0.95rem; 
+            font-weight: 500; 
+            padding: 10px 24px; /* Mais espaço horizontal para equilibrar */
+            border-radius: 100px; 
+            transition: all 0.4s ease; 
+        }
+
+        .nav-links a:hover { 
+            color: #fff; 
+            background: rgba(255, 255, 255, 0.08); 
+            transform: translateY(-1px);
+        }
+
+        /* Botão de Contato da Nav (Estilo Metálico/Premium) */
+        .btn-nav {
+            background: linear-gradient(135deg, #ffffff 0%, #e4e4e7 100%);
+            color: #050505;
+            padding: 12px 28px;
+            border-radius: 100px;
             font-weight: 700;
-            font-size: 1.2rem;
-            letter-spacing: -0.05em;
-        }
-
-        .floating-nav .logo span { color: var(--accent-blue); }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 32px;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
+            font-size: 0.95rem;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
         }
 
-        .nav-links a:hover { color: #fff; }
+        .btn-nav:hover {
+            transform: scale(1.03) translateY(-1px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
+            background: #ffffff;
+        }
 
-        /* Botões */
+        /* =========================================
+           Botões Gerais
+           ========================================= */
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            border-radius: 8px;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 12px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             cursor: pointer;
-            font-size: 0.95rem;
+            font-size: 1rem;
             border: none;
         }
 
         .btn-primary {
             background: #fff;
             color: #000;
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
         }
 
         .btn-primary:hover {
-            background: #e4e4e7;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 25px rgba(255,255,255,0.25);
+            background: #f4f4f5;
         }
 
         .btn-ghost {
-            background: transparent;
+            background: rgba(255, 255, 255, 0.05);
             color: #fff;
-            border: 1px solid var(--border-subtle);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .btn-ghost:hover {
-            background: rgba(255, 255, 255, 0.03);
-            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
         }
 
-        .btn-sm {
-            padding: 8px 16px;
-            font-size: 0.85rem;
-            border-radius: 50px;
-        }
-
-        /* Hero Section */
+        /* =========================================
+           Hero Section
+           ========================================= */
         #hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding-top: 80px;
+            padding-top: 100px;
         }
 
-        .hero-content {
-            max-width: 850px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        .hero-content { max-width: 900px; display: flex; flex-direction: column; align-items: center; }
 
         .badge-tech {
             font-family: 'Space Mono', monospace;
             font-size: 0.85rem;
-            color: #a78bfa;
-            background: rgba(124, 58, 237, 0.08);
-            border: 1px solid rgba(124, 58, 237, 0.2);
-            padding: 6px 16px;
+            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 8px 20px;
             border-radius: 50px;
-            margin-bottom: 24px;
+            margin-bottom: 2rem;
             display: flex;
             align-items: center;
-            gap: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            gap: 10px;
+            backdrop-filter: blur(10px);
         }
 
-        .cursor {
-            animation: blink 1s infinite;
-        }
-
+        .badge-tech i { color: var(--accent-cyan); }
+        .cursor { animation: blink 1s infinite; font-weight: bold; }
         @keyframes blink { 50% { opacity: 0; } }
 
         #hero h1 {
             font-size: clamp(2.5rem, 5vw, 4.5rem);
             line-height: 1.1;
-            margin-bottom: 24px;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
         }
 
         #hero p {
-            font-size: 1.15rem;
+            font-size: clamp(1rem, 2vw, 1.15rem);
             color: var(--text-secondary);
-            margin-bottom: 40px;
+            margin-bottom: 3rem;
             max-width: 700px;
+            line-height: 1.7;
         }
 
-        .hero-actions {
-            display: flex;
-            gap: 16px;
-        }
-
-        /* MAGIC GLOW CARDS */
-        .bento-grid, .projects-grid {
-            display: grid;
-            gap: 20px;
-        }
-
+        /* =========================================
+           Bento Grid & Cartões
+           ========================================= */
         .bento-grid {
+            display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, minmax(200px, auto));
+            grid-template-rows: repeat(2, minmax(280px, auto));
+            gap: 24px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .card-wrapper {
+            border-radius: 20px;
+            height: 100%;
         }
 
         .bento-card, .project-card {
-            background-color: var(--card-bg);
-            border-radius: 16px;
+            background-color: var(--bg-card);
+            border-radius: 20px;
             position: relative;
-            border: 1px solid var(--border-subtle);
+            border: 1px solid var(--card-border-default);
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            height: 100%;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bento-card:hover, .project-card:hover {
+            background-color: var(--bg-card-hover);
+            border-color: var(--card-border-highlight);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-premium);
         }
 
         .bento-card::before, .project-card::before {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: radial-gradient(
-                600px circle at var(--mouse-x) var(--mouse-y), 
-                rgba(255, 255, 255, 0.05),
+                600px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), 
+                var(--glow-card),
                 transparent 40%
             );
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: opacity 0.4s ease;
             z-index: 1;
             pointer-events: none;
         }
 
-        .bento-card:hover::before, .project-card:hover::before {
-            opacity: 1;
-        }
-
-        .project-card {
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(96, 165, 250, 0.3);
-        }
-
-        .card-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10;
-        }
+        .card-wrapper:hover .bento-card::before, .card-wrapper:hover .project-card::before { opacity: 1; }
 
         .card-content {
-            padding: 32px;
+            padding: 36px;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -318,143 +359,132 @@
             z-index: 2;
         }
 
-        /* Bento Box Configs */
-        .bento-large {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
+        .bento-large { grid-column: span 2; grid-row: span 2; }
 
-        .bento-card h3 { font-size: 1.4rem; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; color: #fff; }
-        .bento-card h4 { font-size: 1.2rem; margin-bottom: 8px; color: #e4e4e7; }
-        .bento-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 16px; }
+        .bento-card h3 { font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 12px; }
+        .bento-card h4 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #fff; }
+        .bento-card p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.6;}
 
-        .tech-icon { font-size: 2rem; color: #60a5fa; margin-bottom: 16px; }
+        .tech-icon { font-size: 2.2rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem; display: inline-block;}
 
         .stats-content { align-items: center; justify-content: center; text-align: center; }
-        .stat-number { font-size: 4rem; font-weight: 700; background: linear-gradient(to right, #fff, #71717a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
-        .stat-label { color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; font-weight: 600;}
+        .stat-number { font-size: 4.5rem; font-weight: 800; background: linear-gradient(180deg, #fff 0%, #71717a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; margin-bottom: 10px;}
+        .stat-label { color: var(--text-secondary); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 600;}
 
         /* Tags */
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: auto;
-        }
-
+        .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
         .tags span {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-subtle);
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.75rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
             color: var(--text-secondary);
             font-weight: 500;
         }
-
-        .tech-font span { font-family: 'Space Mono', monospace; }
+        
+        .tech-font span { font-family: 'Space Mono', monospace; color: var(--accent-cyan); background: rgba(34, 211, 238, 0.05); border-color: rgba(34, 211, 238, 0.15); }
 
         /* Projetos */
-        .projects-grid {
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        }
+        .project-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+        .folder-icon { font-size: 2.2rem; color: var(--accent-purple); }
+        .project-header a { color: var(--text-tertiary); font-size: 1.3rem; transition: color 0.3s ease; z-index: 11; position: relative;}
+        .project-header a:hover { color: #fff; }
 
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 11;
-        }
+        .project-card h3 { margin-bottom: 12px; font-size: 1.4rem; font-weight: 700; }
+        .project-card p { color: var(--text-secondary); margin-bottom: 24px; font-size: 1rem; flex-grow: 1; }
+        .card-link::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; }
 
-        .folder-icon { font-size: 2rem; color: #a78bfa; }
-        .project-header a { color: var(--text-secondary); font-size: 1.2rem; transition: color 0.2s; }
-        .project-card:hover .project-header a { color: #fff; }
-
-        .project-card h3 { margin-bottom: 12px; font-size: 1.3rem; color: #f4f4f5; }
-        .project-card p { color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem; flex-grow: 1; }
-
-        /* CTA Box / Footer */
+        /* =========================================
+           Footer & CTA
+           ========================================= */
         .cta-box {
-            background: linear-gradient(145deg, rgba(15,15,15,1) 0%, rgba(5,5,5,1) 100%);
-            border: 1px solid var(--border-subtle);
+            background: linear-gradient(180deg, var(--bg-card) 0%, #08080a 100%);
+            border: 1px solid var(--card-border-default);
             border-radius: 24px;
-            padding: 60px 40px;
+            padding: 80px 40px;
             text-align: center;
             margin-bottom: 60px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            transition: all 0.4s ease;
         }
-
-        .cta-box h2 { font-size: 2.2rem; margin-bottom: 16px; }
-        .cta-box p { color: var(--text-secondary); max-width: 600px; margin: 0 auto 32px; font-size: 1.05rem; }
+        
+        .cta-box:hover { border-color: rgba(139, 92, 246, 0.25); }
+        .cta-box h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 1.5rem; font-weight: 800;}
+        .cta-box p { color: var(--text-secondary); max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.1rem; }
 
         .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 32px 0;
-            border-top: 1px solid var(--border-subtle);
-            color: var(--text-secondary);
-            font-size: 0.95rem;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-tertiary); font-size: 0.95rem;
         }
 
-        .social-links { 
-            display: flex; 
-            gap: 24px; 
-            align-items: center;
-        }
-        
+        .social-links { display: flex; gap: 24px; align-items: center; }
         .social-links a { 
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-secondary); 
-            font-size: 0.95rem; 
-            font-weight: 500;
-            transition: color 0.2s; 
-            text-decoration: none;
-            position: relative; 
-            z-index: 10; 
+            display: flex; align-items: center; gap: 8px;
+            color: var(--text-tertiary); font-weight: 500;
+            transition: color 0.3s ease; text-decoration: none; position: relative; z-index: 10; 
         }
-        
-        .social-links a i {
-            font-size: 1.3rem;
-        }
-
+        .social-links a i { font-size: 1.3rem; }
         .social-links a:hover { color: #fff; }
 
-        /* Scroll Animations */
+        /* =========================================
+           Animações de Scroll
+           ========================================= */
         .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            opacity: 0; transform: translateY(40px);
+            transition: all 1s var(--ease-out-expo);
         }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* Responsividade */
-        @media (max-width: 900px) {
+        /* =========================================
+           Responsividade
+           ========================================= */
+        @media (max-width: 1024px) {
             .bento-grid { grid-template-columns: repeat(2, 1fr); }
             .bento-large { grid-column: span 2; grid-row: span 1; }
         }
 
-        @media (max-width: 600px) {
-            .floating-nav { top: auto; bottom: 24px; border-radius: 16px; padding: 12px 16px; }
-            .nav-links { display: none; } 
+        @media (max-width: 768px) {
+            .section-padding { padding: 100px 0; }
             
-            .bento-grid { grid-template-columns: 1fr; }
+            /* Navbar no Telemóvel - Flutuante Superior Ajustada */
+            .floating-nav {
+                top: 20px;
+                padding: 10px 20px;
+                justify-content: center;
+                max-width: 85%;
+                background: rgba(15, 15, 20, 0.55);
+            }
+            
+            .floating-nav.scrolled {
+                top: 12px;
+            }
+
+            .floating-nav .logo, 
+            .btn-nav { 
+                display: none; 
+            }
+
+            .nav-links { 
+                display: flex; 
+                width: 100%; 
+                justify-content: space-evenly; 
+                gap: 0;
+            }
+
+            .nav-links a {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            /* Fim Navbar Telemóvel */
+
+            .bento-grid { grid-template-columns: 1fr; gap: 20px;}
             .bento-large { grid-column: span 1; }
-            
-            .hero-actions { flex-direction: column; width: 100%; }
-            .btn { width: 100%; justify-content: center; }
-            
-            .cta-box { padding: 40px 20px; }
-            .cta-box h2 { font-size: 1.8rem; }
+            .card-content { padding: 28px;}
+            .cta-box { padding: 60px 24px; border-radius: 20px; }
             .footer-bottom { flex-direction: column; gap: 24px; text-align: center; }
-            .social-links { flex-direction: column; gap: 16px; }
+            .social-links { flex-wrap: wrap; justify-content: center; }
         }
     </style>
 </head>
@@ -465,87 +495,92 @@
         <div class="orb orb-2"></div>
     </div>
 
-    <nav class="floating-nav">
+    <nav class="floating-nav" id="navbar">
         <a href="#" class="logo">Dev<span>.</span></a>
         <ul class="nav-links">
             <li><a href="#sobre">Perfil</a></li>
             <li><a href="#projetos">Cases</a></li>
         </ul>
-        <a href="#contato" class="btn btn-sm">Contato</a>
+        <a href="#contato" class="btn-nav">Contato</a>
     </nav>
 
     <section id="hero">
-        <div class="container hero-content reveal">
-            <div class="badge-tech"><i class="fas fa-terminal"></i> <span id="typewriter"></span><span class="cursor">|</span></div>
-            <h1>Desenvolvendo <span class="text-gradient">Arquiteturas Escaláveis</span> para negócios digitais</h1>
-            <p>Especialista em criar soluções de ponta a ponta, alinhando objetivos estratégicos com engenharia de software de alta performance, código limpo e foco absoluto na entrega de valor.</p>
-            <div class="hero-actions">
-                <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
-                <a href="#" target="_blank" class="btn btn-ghost"><i class="fas fa-file-pdf"></i> Baixar CV</a>
+        <div class="container hero-content reveal active">
+            <div class="badge-tech">
+                <i class="fas fa-code"></i> 
+                <span id="typewriter"></span><span class="cursor">|</span>
             </div>
+            <h1>Desenvolvendo <span class="text-gradient">Arquiteturas Escaláveis</span> para o futuro digital.</h1>
+            <p>Engenheiro de Software dedicado a transformar problemas complexos de negócio em soluções tecnológicas robustas, eficientes e de altíssimo impacto visual.</p>
+            <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
         </div>
     </section>
 
     <section id="sobre" class="section-padding">
         <div class="container">
-            <h2 class="section-title reveal">Perfil Profissional</h2>
+            <h2 class="section-title reveal">O Meu Perfil</h2>
             
             <div class="bento-grid" id="bento-cards">
-                <div class="bento-card bento-large reveal">
-                    <div class="card-border"></div>
-                    <div class="card-content">
-                        <h3><i class="fas fa-briefcase"></i> Síntese de Qualificações</h3>
-                        <p>Sou o Gustavo, profissional dedicado à engenharia de software com foco em transformar requisitos complexos de negócios em sistemas robustos e eficientes. Possuo vivência consolidada em metodologias ágeis e cultura de qualidade técnica.</p>
-                        <p>Minha atuação engloba desde a modelagem de bancos de dados relacionais e construção de APIs seguras no back-end, até a concepção de interfaces dinâmicas, garantindo resiliência, manutenibilidade e excelente experiência do usuário.</p>
-                    </div>
-                </div>
-
-                <div class="bento-card reveal" style="transition-delay: 100ms;">
-                    <div class="card-border"></div>
-                    <div class="card-content stats-content">
-                        <span class="stat-number">+2</span>
-                        <span class="stat-label">Anos de Experiência</span>
-                    </div>
-                </div>
-
-                <div class="bento-card reveal" style="transition-delay: 200ms;">
-                    <div class="card-border"></div>
-                    <div class="card-content">
-                        <i class="fas fa-server tech-icon"></i>
-                        <h4>Engenharia Back-end</h4>
-                        <p>Desenvolvimento de APIs RESTful, microsserviços e integração de sistemas com foco em segurança.</p>
-                        <div class="tags">
-                            <span>Node.js</span>
-                            <span>Python</span>
-                            <span>Clean Architecture</span>
+                <div class="card-wrapper bento-large reveal">
+                    <div class="bento-card">
+                        <div class="card-content">
+                            <h3><i class="fas fa-user-check"></i> Quem sou Eu?</h3>
+                            <p>Sou o Gustavo, um profissional dedicado à engenharia de software com foco em transformar requisitos complexos de negócios em sistemas robustos e eficientes. Possuo vivência consolidada em metodologias ágeis e cultura de qualidade técnica.</p>
+                            <p>Minha atuação engloba desde a modelagem de bases de dados relacionais e construção de APIs seguras no back-end, até a conceção de interfaces dinâmicas, garantindo resiliência, manutenibilidade e excelente experiência do utilizador.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bento-card reveal" style="transition-delay: 300ms;">
-                    <div class="card-border"></div>
-                    <div class="card-content">
-                        <i class="fas fa-layer-group tech-icon"></i>
-                        <h4>Arquitetura Front-end</h4>
-                        <p>Criação de SPAs otimizadas para performance, conversão e acessibilidade (Padrões WCAG).</p>
-                        <div class="tags">
-                            <span>React</span>
-                            <span>JavaScript</span>
-                            <span>Tailwind/CSS3</span>
+                <div class="card-wrapper reveal" style="transition-delay: 100ms;">
+                    <div class="bento-card">
+                        <div class="card-content stats-content">
+                            <span class="stat-number">+2</span>
+                            <span class="stat-label">Anos de Experiência</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bento-card reveal" style="transition-delay: 400ms;">
-                    <div class="card-border"></div>
-                    <div class="card-content">
-                        <i class="fas fa-database tech-icon"></i>
-                        <h4>Data & Infraestrutura</h4>
-                        <p>Modelagem de dados relacional e ambientes de implantação baseados em containers.</p>
-                        <div class="tags">
-                            <span>PostgreSQL</span>
-                            <span>Docker</span>
-                            <span>CI/CD</span>
+                <div class="card-wrapper reveal" style="transition-delay: 200ms;">
+                    <div class="bento-card">
+                        <div class="card-content">
+                            <i class="fas fa-server tech-icon"></i>
+                            <h4>Engenharia Back-end</h4>
+                            <p>Desenvolvimento de APIs RESTful, microsserviços e integração de sistemas robustos.</p>
+                            <div class="tags tech-font">
+                                <span>Node.js</span>
+                                <span>Python</span>
+                                <span>Clean Arch</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-wrapper reveal" style="transition-delay: 300ms;">
+                    <div class="bento-card">
+                        <div class="card-content">
+                            <i class="fas fa-layer-group tech-icon"></i>
+                            <h4>Arquitetura Front-end</h4>
+                            <p>Criação de SPAs otimizadas para performance e alta retenção de utilizadores.</p>
+                            <div class="tags tech-font">
+                                <span>React</span>
+                                <span>TypeScript</span>
+                                <span>TailwindCSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-wrapper reveal" style="transition-delay: 400ms;">
+                    <div class="bento-card">
+                        <div class="card-content">
+                            <i class="fas fa-shield-alt tech-icon"></i>
+                            <h4>Segurança & Infra</h4>
+                            <p>Modelagem de dados escalável e implantação baseada em containers.</p>
+                            <div class="tags tech-font">
+                                <span>PostgreSQL</span>
+                                <span>Docker</span>
+                                <span>CI/CD</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -558,58 +593,68 @@
             <h2 class="section-title reveal">Cases de Sucesso</h2>
             
             <div class="projects-grid" id="project-cards">
-                
-                <div class="project-card reveal">
-                    <div class="card-border"></div>
-                    <div class="card-content">
-                        <div class="project-header">
-                            <i class="far fa-folder-open folder-icon"></i>
-                            <a href="https://guuholiveira2202-png.github.io/Finan-as-flow/" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                        <h3>SaaS: Finanças Flow</h3>
-                        <p>Sistema corporativo de gestão financeira. Desenvolvido para centralizar o controle de fluxo de caixa, relatórios de receitas e despesas, utilizando uma arquitetura escalável e interface focada em produtividade.</p>
-                        <div class="tags tech-font">
-                            <span>Arquitetura Web</span>
-                            <span>Dashboard</span>
-                            <span>JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card reveal" style="transition-delay: 150ms;">
-                    <div class="card-border"></div>
-                    <div class="card-content">
-                        <div class="project-header">
-                            <i class="far fa-folder-open folder-icon"></i>
-                            <a href="https://guuholiveira2202-png.github.io/Hype-PIzzaria/" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                        <h3>E-commerce: Hype Store</h3>
-                        <p>Plataforma de catálogo digital e vendas para o setor alimentício. Arquitetada visando altíssima retenção e conversão de usuários por meio de um design system responsivo e fluxo de checkout simplificado.</p>
-                        <div class="tags tech-font">
-                            <span>E-commerce</span>
-                            <span>UI/UX</span>
-                            <span>Frontend</span>
+                <div class="card-wrapper reveal">
+                    <div class="project-card">
+                        <div class="card-content">
+                            <div class="project-header">
+                                <i class="far fa-folder folder-icon"></i>
+                                <a href="https://guuholiveira2202-png.github.io/Finan-as-flow/" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <h3>SaaS: Finanças Flow</h3>
+                            <a href="https://guuholiveira2202-png.github.io/Finan-as-flow/" target="_blank" rel="noopener noreferrer" class="card-link"></a>
+                            <p>Sistema corporativo de gestão financeira focado em centralizar o controlo de fluxo de caixa com uma arquitetura web escalável.</p>
+                            <div class="tags tech-font">
+                                <span>Web App</span>
+                                <span>Dashboard</span>
+                                <span>TypeScript</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card reveal" style="transition-delay: 300ms;">
-                    <div class="card-border"></div>
-                    <div class="card-content">
-                        <div class="project-header">
-                            <i class="far fa-folder-open folder-icon"></i>
-                            <a href="https://guuholiveira2202-png.github.io/psicoterapelta-leia-/" target="_blank" class="card-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                        <h3>Institucional: Âncora Psi</h3>
-                        <p>Página de alta conversão (Landing Page) projetada para o setor de saúde mental. Estruturada com técnicas de SEO, otimização de tempo de carregamento e gatilhos de captação de leads qualificados.</p>
-                        <div class="tags tech-font">
-                            <span>SEO</span>
-                            <span>Landing Page</span>
-                            <span>Conversão</span>
+                <div class="card-wrapper reveal" style="transition-delay: 150ms;">
+                    <div class="project-card">
+                        <div class="card-content">
+                            <div class="project-header">
+                                <i class="far fa-folder folder-icon"></i>
+                                <a href="https://guuholiveira2202-png.github.io/Hype-PIzzaria/" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <h3>E-commerce: Hype Store</h3>
+                            <a href="https://guuholiveira2202-png.github.io/Hype-PIzzaria/" target="_blank" rel="noopener noreferrer" class="card-link"></a>
+                            <p>Plataforma de vendas arquitetada visando altíssima retenção por meio de um design system fluido e responsivo.</p>
+                            <div class="tags tech-font">
+                                <span>E-commerce</span>
+                                <span>UI/UX</span>
+                                <span>Svelte</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <div class="card-wrapper reveal" style="transition-delay: 300ms;">
+                    <div class="project-card">
+                        <div class="card-content">
+                            <div class="project-header">
+                                <i class="far fa-folder folder-icon"></i>
+                                <a href="https://guuholiveira2202-png.github.io/psicoterapelta-leia-/" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <h3>Institucional: Âncora Psi</h3>
+                            <a href="https://guuholiveira2202-png.github.io/psicoterapelta-leia-/" target="_blank" rel="noopener noreferrer" class="card-link"></a>
+                            <p>Landing Page estruturada com técnicas avançadas de SEO e gatilhos de captação para geração de leads qualificados.</p>
+                            <div class="tags tech-font">
+                                <span>SEO</span>
+                                <span>Landing Page</span>
+                                <span>Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -618,21 +663,20 @@
         <div class="container reveal">
             <div class="cta-box">
                 <h2>Disponível para novos desafios.</h2>
-                <p>Busca um engenheiro de software para compor sua equipe ou liderar o desenvolvimento técnico do seu próximo projeto estratégico? Vamos agendar uma conversa.</p>
-                <a href="https://wa.me/5511930862733?text=Olá,%20Gustavo!%20Acessei%20seu%20portfólio%20e%20gostaria%20de%20falar%20sobre%20oportunidades." target="_blank" class="btn btn-primary">
-                    <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Iniciar Contato Direto
+                <p>Procura um engenheiro de software para integrar a sua equipa ou liderar o desenvolvimento técnico do seu próximo projeto estratégico? Vamos conversar.</p>
+                <a href="https://wa.me/5511930862733?text=Olá,%20Gustavo!%20Acessei%20seu%20portfólio%20e%20gostaria%20de%20falar%20sobre%20oportunidades." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> Iniciar Contacto
                 </a>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 Gustavo Henrique. Todos os direitos reservados.</p>
+                <p>&copy; 2026 Gustavo Henrique Santos. Todos os direitos reservados.</p>
                 <div class="social-links">
-                    
-                    
-                    <a href="https://instagram.com/lowkey_gusta" target="_blank" title="Meu Instagram">
-                        <i class="fab fa-instagram"></i> @lowkey_gusta
+                   
+                    <a href="https://instagram.com/lowkey_gusta" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i> Instagram
                     </a>
-                    <a href="https://wa.me/5511930862733" target="_blank" title="Meu WhatsApp">
+                    <a href="https://wa.me/5511930862733" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
                 </div>
@@ -641,89 +685,61 @@
     </footer>
 
     <script>
-        // 1. Efeito de Digitação (Typewriter)
-        const texts = ["Engenheiro de Software", "Desenvolvedor Backend", "Analista de Sistemas"];
-        let count = 0;
-        let index = 0;
-        let currentText = "";
-        let letter = "";
-        let isDeleting = false;
-
-        function type() {
-            if (count === texts.length) {
-                count = 0;
-            }
-            currentText = texts[count];
-
-            if (isDeleting) {
-                letter = currentText.slice(0, --index);
-            } else {
-                letter = currentText.slice(0, ++index);
-            }
-
-            document.getElementById("typewriter").textContent = letter;
-
-            let typeSpeed = isDeleting ? 40 : 80;
-
-            if (!isDeleting && letter.length === currentText.length) {
-                typeSpeed = 2500; // Pausa no final da palavra
-                isDeleting = true;
-            } else if (isDeleting && letter.length === 0) {
-                isDeleting = false;
-                count++;
-                typeSpeed = 400; // Pausa antes de começar a nova palavra
-            }
-
-            setTimeout(type, typeSpeed);
-        }
-
-        // Inicia o efeito de digitação após carregamento
-        document.addEventListener("DOMContentLoaded", type);
-
-        // 2. Animação de Scroll (Reveal Elements) com Intersection Observer (Mais performático)
-        const revealOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add("active");
-                    observer.unobserve(entry.target); // Anima apenas uma vez
-                }
-            });
-        }, revealOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => {
-            revealOnScroll.observe(el);
-        });
-
-        // 3. Efeito MAGIC GLOW (Cards que acompanham o mouse)
-        const handleOnMouseMove = (e, containerId) => {
-            const cards = document.getElementById(containerId).getElementsByClassName(containerId === 'bento-cards' ? 'bento-card' : 'project-card');
+        document.addEventListener("DOMContentLoaded", function() {
             
-            for (const card of cards) {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                card.style.setProperty("--mouse-x", `${x}px`);
-                card.style.setProperty("--mouse-y", `${y}px`);
+            // 1. Navbar Scrolled
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // 2. Typewriter
+            const texts = ["Engenheiro de Software.", "Desenvolvedor Backend.", "Analista de Sistemas."];
+            let count = 0, index = 0, isDeleting = false, letter = "";
+
+            function type() {
+                if (count === texts.length) count = 0;
+                const currentText = texts[count];
+                letter = isDeleting ? currentText.slice(0, --index) : currentText.slice(0, ++index);
+                document.getElementById("typewriter").textContent = letter;
+
+                let speed = isDeleting ? 30 : 70;
+                if (!isDeleting && letter.length === currentText.length) {
+                    speed = 2500; isDeleting = true;
+                } else if (isDeleting && letter.length === 0) {
+                    isDeleting = false; count++; speed = 400;
+                }
+                setTimeout(type, speed);
             }
-        };
+            type();
 
-        const bentoGrid = document.getElementById("bento-cards");
-        const projectGrid = document.getElementById("project-cards");
+            // 3. Reveal on Scroll
+            const obsOptions = { threshold: 0.1, rootMargin: "0px 0px -40px 0px" };
+            const revealObs = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active"); obs.unobserve(entry.target);
+                    }
+                });
+            }, obsOptions);
+            document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-        if (bentoGrid) {
-            bentoGrid.onmousemove = e => handleOnMouseMove(e, "bento-cards");
-        }
-        if (projectGrid) {
-            projectGrid.onmousemove = e => handleOnMouseMove(e, "project-cards");
-        }
+            // 4. Efeito de Brilho Dinâmico (Hover com Rato) - Desktop Apenas
+            if (window.innerWidth > 900) {
+                document.querySelectorAll('.card-wrapper').forEach(wrapper => {
+                    const card = wrapper.firstElementChild;
+                    
+                    wrapper.addEventListener('mousemove', (e) => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        
+                        card.style.setProperty("--mouse-x", `${x}px`);
+                        card.style.setProperty("--mouse-y", `${y}px`);
+                    });
+                });
+            }
+        });
     </script>
 </body>
 </html>
