@@ -1,214 +1,234 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustavo Henrique | Analista e Desenvolvedor de Sistemas</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<title>Gustavo Henrique | Analista & Desenvolvedor de Sistemas</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="bg-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-    </div>
+<div class="bg">
+    <div class="grid"></div>
+    <div class="blur blur1"></div>
+    <div class="blur blur2"></div>
+</div>
 
-    <nav class="floating-nav" id="navbar">
-        <a href="#" class="logo">Dev<span>.</span></a>
-        <ul class="nav-links">
-            <li><a href="#sobre">Perfil</a></li>
-            <li><a href="#projetos">Cases</a></li>
-        </ul>
-        <a href="#contato" class="btn-nav">Contato</a>
-    </nav>
+<nav class="navbar" id="navbar">
+    <a href="#" class="logo">Gustavo<span>.</span></a>
+    
+    <ul class="nav-links" id="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#skills">Especialidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li class="mobile-only">
+            <a href="#contato" class="nav-btn" style="display:block; text-align:center; margin-top:10px;">Contato</a>
+        </li>
+    </ul>
 
-    <section id="hero">
-        <div class="container hero-content reveal active">
-            <div class="badge-tech">
-                <i class="fas fa-code"></i> 
-                <span id="typewriter"></span><span class="cursor">|</span>
-            </div>
-            <h1>Desenvolvendo <span class="text-gradient">Sistemas Inteligentes</span> para o seu negócio.</h1>
-            <p>Analista e Desenvolvedor de Sistemas focado em compreender as necessidades reais do negócio e criar soluções tecnológicas completas, integrando análise estratégica e desenvolvimento de alto desempenho.</p>
-            <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
-        </div>
-    </section>
+    <a href="#contato" class="nav-btn desktop-only">Contato</a>
 
-    <section id="sobre" class="section-padding">
-        <div class="container">
-            <h2 class="section-title reveal">O Meu Perfil</h2>
-            
-            <div class="bento-grid" id="bento-cards">
-                <div class="card-wrapper bento-large reveal">
-                    <div class="bento-card">
-                        <div class="card-content">
-                            <h3><i class="fas fa-user-check"></i> Quem sou Eu?</h3>
-                            <p>Meu Nome é Gustavo, um profissional dedicado à Análise e Desenvolvimento de Sistemas. Meu foco é entender os desafios do seu negócio e desenhar arquiteturas eficientes, garantindo que a tecnologia trabalhe a favor dos seus resultados.</p>
-                            <p>Atuo em todo o ciclo de vida do software: desde o levantamento de requisitos e modelagem de dados, até a implementação de interfaces dinâmicas e APIs seguras, sempre com foco na melhor experiência do usuário e na escalabilidade do sistema.</p>
-                        </div>
-                    </div>
-                </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</nav>
 
-                <div class="card-wrapper reveal" style="transition-delay: 100ms;">
-                    <div class="bento-card">
-                        <div class="card-content stats-content">
-                            <span class="stat-number">+2</span>
-                            <span class="stat-label">Anos de Experiência</span>
-                        </div>
-                    </div>
-                </div>
+<section class="hero">
+<div class="container">
+<div class="hero-grid">
 
-                <div class="card-wrapper reveal" style="transition-delay: 200ms;">
-                    <div class="bento-card">
-                        <div class="card-content">
-                            <i class="fas fa-server tech-icon"></i>
-                            <h4>Desenvolvimento Back-end</h4>
-                            <p>Construção de APIs RESTful, microsserviços e integração de regras de negócio sólidas.</p>
-                            <div class="tags tech-font">
-                                <span>Node.js</span>
-                                <span>Python</span>
-                                <span>APIs</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="hero-left reveal active">
+<div class="badge">
+<i class="fa-solid fa-code"></i>
+<span id="typewriter"></span>
+</div>
+<h1>Transformando <span class="gradient">ideias em sistemas</span> digitais de alto impacto.</h1>
+<p>Analista e Desenvolvedor de Sistemas especializado em criar soluções modernas, escaláveis e profissionais para empresas que desejam elevar sua presença digital e otimizar seus processos.</p>
+<div class="hero-buttons">
+<a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+<a href="#contato" class="btn btn-secondary">Falar Comigo</a>
+</div>
+</div>
 
-                <div class="card-wrapper reveal" style="transition-delay: 300ms;">
-                    <div class="bento-card">
-                        <div class="card-content">
-                            <i class="fas fa-layer-group tech-icon"></i>
-                            <h4>Desenvolvimento Front-end</h4>
-                            <p>Criação de interfaces responsivas e intuitivas, priorizando a usabilidade e a retenção.</p>
-                            <div class="tags tech-font">
-                                <span>React</span>
-                                <span>TypeScript</span>
-                                <span>TailwindCSS</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="hero-card reveal">
+<div class="code-header">
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+</div>
+<div class="code">
+<p><span class="purple">const</span> <span class="blue">developer</span> = {</p>
+<p>&nbsp;&nbsp;name: <span class="greenText">"Gustavo Henrique"</span>,</p>
+<p>&nbsp;&nbsp;role: <span class="greenText">"Full Stack Developer"</span>,</p>
+<p>&nbsp;&nbsp;focus: <span class="greenText">"UX + Performance"</span>,</p>
+<p>&nbsp;&nbsp;stack: [</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="greenText">"React"</span>,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="greenText">"TypeScript"</span>,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="greenText">"Node.js"</span></p>
+<p>&nbsp;&nbsp;]</p>
+<p>};</p>
+</div>
+</div>
 
-                <div class="card-wrapper reveal" style="transition-delay: 400ms;">
-                    <div class="bento-card">
-                        <div class="card-content">
-                            <i class="fas fa-project-diagram tech-icon"></i>
-                            <h4>Análise & Modelagem</h4>
-                            <p>Mapeamento de processos, modelagem de banco de dados e arquitetura de sistemas.</p>
-                            <div class="tags tech-font">
-                                <span>PostgreSQL</span>
-                                <span>UML</span>
-                                <span>BPMN</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
+</div>
+</section>
 
-    <section id="projetos" class="section-padding">
-        <div class="container">
-            <h2 class="section-title reveal">Cases de Sucesso</h2>
-            
-            <div class="projects-grid" id="project-cards">
-                <div class="card-wrapper reveal">
-                    <div class="project-card">
-                        <div class="card-content">
-                            <div class="project-header">
-                                <i class="far fa-folder folder-icon"></i>
-                                <a href="https://guuholiveira2202-png.github.io/Finan-as-flow/" target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                            <h3>SaaS: Finanças Flow</h3>
-                            <a href="https://guuholiveira2202-png.github.io/Finan-as-flow/" target="_blank" rel="noopener noreferrer" class="card-link"></a>
-                            <p>Sistema corporativo de gestão financeira focado em centralizar o controle de fluxo de caixa com uma arquitetura web escalável.</p>
-                            <div class="tags tech-font">
-                                <span>Web App</span>
-                                <span>Dashboard</span>
-                                <span>TypeScript</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<section id="sobre">
+<div class="container">
+<div class="section-header reveal">
+<span>Sobre Mim</span>
+<h2>Experiência focada em performance e resultado.</h2>
+<p>Desenvolvo aplicações modernas com foco em escalabilidade, usabilidade e experiência premium para o usuário final.</p>
+</div>
 
-                <div class="card-wrapper reveal" style="transition-delay: 150ms;">
-                    <div class="project-card">
-                        <div class="card-content">
-                            <div class="project-header">
-                                <i class="far fa-folder folder-icon"></i>
-                                <a href="https://guuholiveira2202-png.github.io/Hype-PIzzaria/" target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                            <h3>E-commerce: Hype Store</h3>
-                            <a href="https://guuholiveira2202-png.github.io/Hype-PIzzaria/" target="_blank" rel="noopener noreferrer" class="card-link"></a>
-                            <p>Plataforma de vendas arquitetada visando altíssima retenção por meio de um design system fluido e responsivo.</p>
-                            <div class="tags tech-font">
-                                <span>E-commerce</span>
-                                <span>UI/UX</span>
-                                <span>Svelte</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="grid-cards">
+<div class="card reveal">
+<i class="fa-solid fa-layer-group"></i>
+<h3>Front-end Premium</h3>
+<p>Interfaces modernas, responsivas e fluidas utilizando tecnologias atuais e design sofisticado.</p>
+<div class="tags">
+<span>React</span>
+<span>TypeScript</span>
+<span>Tailwind</span>
+</div>
+</div>
 
-                <div class="card-wrapper reveal" style="transition-delay: 300ms;">
-                    <div class="project-card">
-                        <div class="card-content">
-                            <div class="project-header">
-                                <i class="far fa-folder folder-icon"></i>
-                                <a href="https://guuholiveira2202-png.github.io/psicoterapelta-leia-/" target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                            <h3>Institucional: Âncora Psi</h3>
-                            <a href="https://guuholiveira2202-png.github.io/psicoterapelta-leia-/" target="_blank" rel="noopener noreferrer" class="card-link"></a>
-                            <p>Landing Page estruturada com técnicas avançadas de SEO e gatilhos de captação para geração de leads qualificados.</p>
-                            <div class="tags tech-font">
-                                <span>SEO</span>
-                                <span>Landing Page</span>
-                                <span>Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="card reveal">
+<i class="fa-solid fa-server"></i>
+<h3>Back-end Escalável</h3>
+<p>APIs robustas, arquitetura segura e integração eficiente para sistemas modernos.</p>
+<div class="tags">
+<span>Node.js</span>
+<span>Python</span>
+<span>REST API</span>
+</div>
+</div>
 
-    <footer id="contato">
-        <div class="container reveal">
-            <div class="cta-box">
-                <h2>Disponível para novos desafios.</h2>
-                <p>Procura um Analista e Desenvolvedor de Sistemas para integrar sua equipe ou transformar a sua ideia em um projeto real? Vamos conversar.</p>
-                <a href="https://wa.me/5511930862733?text=Olá,%20Gustavo!%20Acessei%20seu%20portfólio%20e%20gostaria%20de%20falar%20sobre%20oportunidades." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    <i class="fab fa-whatsapp"></i> Iniciar Contato
-                </a>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Gustavo Henrique Santos. Todos os direitos reservados.</p>
-                <div class="social-links">
-                    
-                    <a href="https://instagram.com/lowkey_gusta" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </a>
-                    <a href="https://wa.me/5511930862733" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+<div class="card reveal">
+<i class="fa-solid fa-chart-line"></i>
+<h3>Análise de Sistemas</h3>
+<p>Mapeamento de processos, modelagem e soluções inteligentes voltadas ao negócio.</p>
+<div class="tags">
+<span>UML</span>
+<span>BPMN</span>
+<span>PostgreSQL</span>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="projetos">
+<div class="container">
+<div class="section-header reveal">
+<span>Projetos</span>
+<h2>Cases modernos e profissionais.</h2>
+<p>Projetos desenvolvidos com foco em design premium, experiência do usuário e performance.</p>
+</div>
+
+<div class="projects">
+<div class="project reveal">
+<div class="project-image">
+    <i class="fa-solid fa-chart-pie"></i>
+</div>
+<div class="project-content">
+<div class="project-top">
+<i class="fa-regular fa-folder-open"></i>
+<a href="https://guuholiveira2202-png.github.io/Finan-as-flow/" target="_blank" class="project-link">
+<i class="fa-solid fa-arrow-up-right-from-square"></i>
+</a>
+</div>
+<h3>Finanças Flow</h3>
+<p>Sistema financeiro corporativo com dashboard analítico e experiência premium.</p>
+<div class="tags">
+<span>Dashboard</span>
+<span>SaaS</span>
+<span>Financeiro</span>
+</div>
+</div>
+</div>
+
+<div class="project reveal">
+<div class="project-image">
+    <i class="fa-solid fa-bag-shopping"></i>
+</div>
+<div class="project-content">
+<div class="project-top">
+<i class="fa-regular fa-folder-open"></i>
+<a href="https://guuholiveira2202-png.github.io/Hype-PIzzaria/" target="_blank" class="project-link">
+<i class="fa-solid fa-arrow-up-right-from-square"></i>
+</a>
+</div>
+<h3>Hype Store</h3>
+<p>E-commerce moderno com visual sofisticado e alta retenção visual.</p>
+<div class="tags">
+<span>E-commerce</span>
+<span>UX/UI</span>
+<span>Svelte</span>
+</div>
+</div>
+</div>
+
+<div class="project reveal">
+<div class="project-image">
+    <i class="fa-solid fa-brain"></i>
+</div>
+<div class="project-content">
+<div class="project-top">
+<i class="fa-regular fa-folder-open"></i>
+<a href="https://guuholiveira2202-png.github.io/psicoterapelta-leia-/" target="_blank" class="project-link">
+<i class="fa-solid fa-arrow-up-right-from-square"></i>
+</a>
+</div>
+<h3>Âncora Psi</h3>
+<p>Landing page moderna otimizada para SEO e geração de leads.</p>
+<div class="tags">
+<span>SEO</span>
+<span>Marketing</span>
+<span>Landing Page</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="contato">
+<div class="container">
+<div class="cta reveal">
+<h2>Vamos criar algo incrível juntos.</h2>
+<p>Disponível para novos projetos, freelas e oportunidades profissionais.</p>
+<a href="https://wa.me/5511930862733" target="_blank" class="btn btn-primary">
+<i class="fa-brands fa-whatsapp"></i>
+Entrar em Contato
+</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-content">
+<p>© 2026 Gustavo Henrique — Todos os direitos reservados.</p>
+<div class="socials">
+<a href="https://instagram.com/lowkey_gusta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://wa.me/5511930862733" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+</div>
+</div>
+</div>
+</footer>
 <script src="script.js"></script>
-
 
 </body>
 </html>
